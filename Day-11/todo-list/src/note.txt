@@ -1,0 +1,6 @@
+npx degit ozcanzaferayan/react todo-list
+cd todo-list
+npm install
+npm install lucide-react
+npm run dev
+
