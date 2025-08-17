@@ -1,21 +1,21 @@
-// rafce
-
 import { useState } from "react";
 
+// BMI (Vücut Kitle İndeksi) hesaplama uygulaması
 const App = () => {
-  // kg/m2
-  // usss
-  const [kg, setKg] = useState(120);
-  const [boy, setBoy] = useState(1.73);
-  const [bmi, setBmi] = useState(0);
-  const [sonuc, setSonuc] = useState("");
+  const [kg, setKg] = useState(120); // kilo (kg)
+  const [boy, setBoy] = useState(1.73); // boy (metre)
+  const [bmi, setBmi] = useState(0); // hesaplanan BMI değeri
+  const [sonuc, setSonuc] = useState(""); // değerlendirme sonucu
 
   return (
     <>
+      {/* Butona basıldığında BMI hesaplanır */}
       <button
         onClick={() => {
-          const bmi = kg / (boy * boy);
+          const bmi = kg / (boy * boy); // Formül: kg / (boy²)
           setBmi(bmi);
+
+          // BMI değerine göre sınıflandırma
           if (bmi < 18.5) {
             setSonuc("Zayıf");
           } else if (bmi < 24.9) {
@@ -33,6 +33,8 @@ const App = () => {
       >
         BMI hesapla
       </button>
+
+      {/* Sonuçların ekranda gösterilmesi */}
       <h1>Boy: {boy}</h1>
       <h1>Kilo: {kg}</h1>
       <h1>BMI: {bmi}</h1>
@@ -42,3 +44,11 @@ const App = () => {
 };
 
 export default App;
+
+/*
+ÖZET:
+Bu uygulama, kullanıcının boy ve kilosuna göre BMI (vücut kitle indeksi) hesaplar.
+Sonuç, farklı aralıklara göre yorumlanarak kullanıcıya gösterilir.
+Bu örnek, React’te hesaplamaların state’e nasıl yansıtıldığını
+ve koşullu ifadelerle (if-else) kullanıcıya farklı çıktılar sunulabileceğini anlatır.
+*/
