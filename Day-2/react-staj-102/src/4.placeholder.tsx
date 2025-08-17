@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 
-// rafce
 const App = () => {
-  // usss
   const [users, setUsers] = useState([]);
 
-  // uffs
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
@@ -23,3 +20,14 @@ const App = () => {
 };
 
 export default App;
+
+
+/*
+📌 ÖZET:
+Bu bileşen, JSONPlaceholder API'den kullanıcı verilerini çeker.
+useEffect hook'u ile fetch işlemi yapılır ve useState ile state güncellenir.
+Loading sırasında kullanıcıya "Loading" mesajı gösterilir.
+Veriler geldiğinde kullanıcı isimleri ekrana yazdırılır.
+Bu örnek, React'ta **useEffect + fetch + state yönetimi** mantığını gösterir.
+*/
+

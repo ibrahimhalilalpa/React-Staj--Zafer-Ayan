@@ -1,69 +1,90 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# 🌀 React State ve API / Array / Object Uygulamaları (Day-2)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Bu proje, **React öğrenme sürecinde Day-2 mini uygulamalarını** kapsar.  
+Temel konular: **array, object, array of objects, useEffect ile API fetch** ve state yönetimi.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Başlangıç
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Projeyi kendi bilgisayarında çalıştırmak için:
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+> Tarayıcıda [http://localhost:5173](http://localhost:5173) adresine giderek uygulamayı görüntüleyebilirsin.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📂 Proje Yapısı
+
+- `array.tsx` → Array içerisindeki isimleri liste olarak gösterir.
+    
+- `object.tsx` → Object içindeki bilgileri ekrana yazar.
+    
+- `objectarray.tsx` → Array of objects yapısını liste olarak render eder.
+    
+- `placeholder.tsx` → JSONPlaceholder API’den kullanıcı verilerini çekip ekrana yazdırır.
+    
+- `App.tsx` → Star Wars API’den türleri çeker ve liste olarak gösterir.
+
+
+---
+
+## 🧩 Uygulama Açıklamaları
+
+### 🔢 1. Array (`array.tsx`)
+
+Array elemanlarını JSX ile render etmeyi gösterir.  
+👉 Kullanıcıya basit bir liste olarak sunulur.
+
+### ⬛ 2. Object (`object.tsx`)
+
+Objeyi JSX ile ekrana yazdırır.  
+👉 React’ta object kullanımı ve property erişimi öğretir.
+
+### ⚪ 3. Object Array (`objectarray.tsx`)
+
+Array of objects yapısını render eder.  
+👉 Birden fazla objeyi map ile ekrana göstermek için ideal.
+
+### ⚡ 4. API Kullanımı - JSONPlaceholder (`placeholder.tsx`)
+
+API’den kullanıcı verisi çekilir ve ekrana yazdırılır.  
+👉 useEffect + fetch + state yönetimi mantığını gösterir.
+
+### 🌌 5. API Kullanımı - Star Wars (`App.tsx`)
+
+Star Wars API’den türleri çekip liste halinde gösterir.  
+👉 API’den veri çekme ve liste render mantığı pekiştirilir.
+
+---
+
+## 🎯 Öğrenilen Temel React Konuları
+
+- `useState` ile **state yönetimi**
+    
+- `useEffect` ile **component mount sırasında veri çekme**
+    
+- JSX içinde **array ve object verilerini render etme**
+    
+- **API fetch ve asenkron veri kullanımı**
+    
+- State değiştikçe UI’nin **otomatik yeniden render edilmesi**
+
+
+---
+
+## ✨ Sonuç
+
+Bu proje, Day-2 mini uygulamaları ile React’ta array, object ve API kullanımını öğretir.  
+Her dosya bağımsızdır ve **state ile veri yönetimi mantığını pekiştiren küçük React örnekleridir**. 🚀
+
+## 🛠️ Not
+
+Bu proje **React + TypeScript + Vite** şablonu kullanılarak oluşturulmuştur.  
+Varsayılan Vite README’sinde bulunan ESLint ve yapılandırma bilgileri için bkz: Vite Dokümantasyonu.
