@@ -160,6 +160,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Hızlı geçişi aç": false,
       "graph:Grafik görünümünü aç": false,
       "canvas:Yeni tuval oluşturun": false,
